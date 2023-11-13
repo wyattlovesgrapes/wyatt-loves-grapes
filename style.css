@@ -1,0 +1,136 @@
+/* Global Styles */
+
+
+/* Body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+/* Header */
+header {
+    background: #fff;
+    color: #333;
+    padding: 0px;
+    text-align: center;
+    margin: 0;
+    height: 30px;
+    overflow: hidden; /* Prevent margin collapsing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Scrolling text animation 
+header p {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: scrollText 45s linear infinite;
+    animation-delay: -25s;
+}
+*/
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+
+    80%{
+        transform: translateX(-50%);
+
+    }
+}
+  
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+}
+
+/* Global Classes */
+.icon img {
+    max-width: 80%; /* Adjust the size as needed */
+    max-height: 80%; /* Adjust the size as needed */
+}
+
+.homepage {
+    background: url('/assets/bg-01.png') center/cover no-repeat fixed;
+    height: 100vh;
+    display: grid;
+    overflow: hidden;
+}
+
+.icon {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+#window-header {
+    position: relative;
+
+}
+
+#window-header h3 {
+    margin: 0;  /* Set margin to 0 to remove any default margin */
+    padding: 0; /* Set padding to 0 to remove any default padding */
+    /* Add any additional styling you need */
+}
+  
+#close-blog-post {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: auto;
+    width: 30px;
+    /* Add any additional styles for your close icon */
+}
+
+#blog-window {
+    display: none; /* Default display state*/
+    background-color: white; /* Add your desired background color */
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Add rounded corners if desired */
+    z-index: 2; /* Place on top of other content */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust the width as needed */
+    height: 70%;
+
+}
+
+/* Ids 
+#content-container {
+   
+}
+*/
+
+/* Mobile */
+@media (max-width: 768px) {
+    .homepage {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+    }
+}
+  
+/* Desktop */
+@media (min-width: 767px) {
+    .homepage {
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(7, 1fr);
+    }
+}
