@@ -1,35 +1,38 @@
 /* Global Styles */
-
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/assets/fonts/Minecraft.ttf') format('truetype');
+  }
+  
 
 /* Body */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     overflow: hidden;
+    font-family: 'Minecraft';
 }
 /* Header */
 header {
     background: #fff;
     color: #333;
     padding: 0px;
-    text-align: center;
+    text-align: right;
     margin: 0;
     height: 30px;
-    overflow: hidden; /* Prevent margin collapsing */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
 }
-
-/* Scrolling text animation 
 header p {
-    white-space: nowrap;
-    overflow: hidden;
-    animation: scrollText 45s linear infinite;
-    animation-delay: -25s;
+    position: relative;
+    padding-right: 8px;
+    top:50%;
+    transform: translateY(-50%);
+    margin: 0;
+   
 }
-*/
+
+
+
 
 @keyframes scrollText {
     0% {
@@ -44,24 +47,44 @@ header p {
   
 /* Footer */
 footer {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+    background: #fff;
+    color: #333;
+    padding: 0px;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 30px;
+    height: 40px;
     overflow: hidden;
+}
+
+#start-button {
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    height: auto;
+    width: 120px;
+}
+
+#clock{
+    z-index: 3;
+    position: absolute;
+    right: 10px;
+    bottom: -8px;
+    background:#d9d9d9;
+    padding-top: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 /* Global Classes */
 .icon img {
-    max-width: 80%; /* Adjust the size as needed */
-    max-height: 80%; /* Adjust the size as needed */
+    height: 64px;
+    width: auto;
 }
 
-.homepage {
+
+#homepage {
     background: url('/assets/bg-01.png') center/cover no-repeat fixed;
     height: 100vh;
     display: grid;
@@ -74,7 +97,19 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
+    padding-top: 30px;
+    max-height: 100px;
+    width:auto;
+
+}
+
+.icon-title {
+    background-color: #fff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
 }
 
 #window-header {
@@ -113,6 +148,8 @@ footer {
 
 }
 
+
+
 /* Ids 
 #content-container {
    
@@ -121,7 +158,7 @@ footer {
 
 /* Mobile */
 @media (max-width: 768px) {
-    .homepage {
+    #homepage {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(7, 1fr);
     }
@@ -129,7 +166,7 @@ footer {
   
 /* Desktop */
 @media (min-width: 767px) {
-    .homepage {
+    #homepage {
       grid-template-columns: repeat(7, 1fr);
       grid-template-rows: repeat(7, 1fr);
     }
