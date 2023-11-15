@@ -2,16 +2,8 @@
 @font-face {
     font-family: 'Minecraft';
     src: url('/assets/fonts/Minecraft.ttf') format('truetype');
-  }
-  
-
-/* Body */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    font-family: 'Minecraft';
 }
+
 /* Header */
 header {
     background: #fff;
@@ -27,24 +19,103 @@ header p {
     padding-right: 8px;
     top:50%;
     transform: translateY(-50%);
-    margin: 0;
-   
+    margin: 0;  
 }
 
 
+/* Body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    font-family: 'Minecraft';
+}
 
+/* Loading Bar */
+#loading-bar {
+    width: 100%;
+    height:20px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
 
-@keyframes scrollText {
-    0% {
-        transform: translateX(100%);
-    }
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color:#333;
+    transition: width 1s ease-in-out;
+}
 
-    80%{
-        transform: translateX(-50%);
+/* Homepage */
 
-    }
+#homepage {
+    background: url('/assets/bg-01.png') center/cover no-repeat fixed;
+    height: 100vh;
+    display: grid;
+    overflow: hidden;
+}
+
+.icon img {
+    height: 64px;
+    width: auto;
+}
+
+.icon {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    max-height: 100px;
+    width:auto;
+
+}
+
+.icon-title {
+    background-color: #fff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+/* Blog Posts */
+
+#window-header {
+    position: relative;
+}
+
+#window-header h3 {
+    margin: 0;
+    padding: 0;
 }
   
+#close-blog-post {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: auto;
+    width: 30px;
+}
+
+#blog-window {
+    display: none; /* Default display state*/
+    background-color: white; 
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    height: 70%;
+
+}
+
 /* Footer */
 footer {
     background: #fff;
@@ -76,85 +147,6 @@ footer {
     padding-left: 8px;
     padding-right: 8px;
 }
-
-/* Global Classes */
-.icon img {
-    height: 64px;
-    width: auto;
-}
-
-
-#homepage {
-    background: url('/assets/bg-01.png') center/cover no-repeat fixed;
-    height: 100vh;
-    display: grid;
-    overflow: hidden;
-}
-
-.icon {
-    justify-content: center;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 30px;
-    max-height: 100px;
-    width:auto;
-
-}
-
-.icon-title {
-    background-color: #fff;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-}
-
-#window-header {
-    position: relative;
-
-}
-
-#window-header h3 {
-    margin: 0;  /* Set margin to 0 to remove any default margin */
-    padding: 0; /* Set padding to 0 to remove any default padding */
-    /* Add any additional styling you need */
-}
-  
-#close-blog-post {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    height: auto;
-    width: 30px;
-    /* Add any additional styles for your close icon */
-}
-
-#blog-window {
-    display: none; /* Default display state*/
-    background-color: white; /* Add your desired background color */
-    padding: 20px; /* Adjust padding as needed */
-    border-radius: 10px; /* Add rounded corners if desired */
-    z-index: 2; /* Place on top of other content */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%; /* Adjust the width as needed */
-    height: 70%;
-
-}
-
-
-
-/* Ids 
-#content-container {
-   
-}
-*/
 
 /* Mobile */
 @media (max-width: 768px) {
