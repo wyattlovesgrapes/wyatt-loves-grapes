@@ -1,3 +1,6 @@
+import { loadAndDisplayContent } from "./blog.js";
+
+
 function createIcon(iconInfo) {
     var icon = document.createElement('div');
     icon.id = iconInfo.name;
@@ -18,9 +21,10 @@ function createEmptyIcon() {
 
 export function renderIcons(iconArray) {
     var homepage = document.getElementById('homepage');
+        homepage.innerHTML = ''; // Clear existing icons before rendering
+
 
     iconArray.forEach(function (iconInfo) {
-
         if (iconInfo.empty === false) {
             var icon = createIcon(iconInfo);
         } else {
@@ -28,8 +32,31 @@ export function renderIcons(iconArray) {
         }
         homepage.appendChild(icon);
     });
+
+    addClickEvents();
 }
 
+function addClickEvents() {
+    // Attach click event listeners to all icon images
+    const icons = document.querySelectorAll('.icon img');
+
+    icons.forEach(img => {
+        img.addEventListener('click', function () {
+            // Get the parent icon element
+            const icon = img.closest('.icon');
+            
+            if (icon) {
+                // Get the icon id
+                const iconId = icon.id;
+                console.log('Clicked on icon with ID:', iconId);
+
+                // Load and display content based on the icon id
+                loadAndDisplayContent(`/blog-posts/${iconId}.html`);
+            }
+        });
+    });
+}
+    
 /*
 function removeIcon(icon) {
     var homepage = document.getElementById('homepage');

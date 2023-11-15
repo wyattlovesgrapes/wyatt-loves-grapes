@@ -33,3 +33,12 @@ export function closeContentWindow(){
     const blogWindow  = document.getElementById('blog-window');
     blogWindow.style.display = 'none';
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Attach click event for blog window x button
+    const closeBlogPostButton = document.getElementById('close-blog-post');
+    closeBlogPostButton.addEventListener('click', function () {
+        closeContentWindow();
+
+    });
+});

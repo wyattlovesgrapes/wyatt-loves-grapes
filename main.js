@@ -1,8 +1,7 @@
 // main.js
-import { desktopIconArray } from "./components/icon-config.js";
+import { desktopIconArray, mobileIconArray } from "./components/icon-config.js";
 import { updateClock } from "./components/clock.js";
 import { loadingBar } from "./components/loading-bar.js";
-import { loadAndDisplayContent, closeContentWindow } from "./components/blog.js";
 import { renderIcons } from "./components/homepage.js";
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -10,28 +9,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* Call Functions */
     loadingBar(); //Display loading bar
-    renderIcons(desktopIconArray); //Render initial icon layout
     updateClock(); //Start clock cycle
 
-    /* Event Listeners */
-    // Attach click event listeners to all icons
-    const icons = document.querySelectorAll('.icon');
-    console.log(icons);
-    icons.forEach(icon => {
-        icon.addEventListener('click', function () {
-            const iconId = icon.id;
-            console.log('Clicked on icon with ID:', iconId);
+    // Default icon render
+    if (window.innerWidth <= 768) {
+        renderIcons(mobileIconArray);
+    } else {
+        renderIcons(desktopIconArray);
+    }
 
-            loadAndDisplayContent(`/blog-posts/${icon.id}.html`);
-        });
+    // Attach event listener for window resize
+    window.addEventListener('resize', function () {
+        if (window.innerWidth <= 768) {
+            renderIcons(mobileIconArray);
+        } else {
+            renderIcons(desktopIconArray);
+        }
     });
 
-    // Attach click event for blog window x button
-    const closeBlogPostButton = document.getElementById('close-blog-post');
-    closeBlogPostButton.addEventListener('click', function () {
-        closeContentWindow();
-
-    });
 });
 
 

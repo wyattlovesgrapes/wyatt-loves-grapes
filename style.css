@@ -58,6 +58,7 @@ body {
 .icon img {
     height: 64px;
     width: auto;
+    cursor: pointer;
 }
 
 .icon {
@@ -69,6 +70,7 @@ body {
     padding-top: 30px;
     max-height: 100px;
     width:auto;
+    
 
 }
 
@@ -152,7 +154,7 @@ footer {
 @media (max-width: 768px) {
     #homepage {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(7, 1fr);
+        grid-template-rows: repeat(6, 1fr);
     }
 }
   
@@ -161,5 +163,9 @@ footer {
     #homepage {
       grid-template-columns: repeat(7, 1fr);
       grid-template-rows: repeat(7, 1fr);
+    }
+
+    .icon {
+        padding-top: 70px;
     }
 }
