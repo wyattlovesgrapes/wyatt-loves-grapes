@@ -150,6 +150,14 @@ footer {
     padding-right: 8px;
 }
 
+.centered-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 20px 10px; 
+}
+
 /* Mobile */
 @media (max-width: 768px) {
     #homepage {
