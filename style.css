@@ -67,7 +67,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 30px;
+    padding-top: 25px;
+    padding-left: 10px;
     max-height: 100px;
     width:auto;
     
@@ -117,6 +118,10 @@ body {
     height: 70%;
 
 }
+#post h3 {
+    padding: 0;
+    margin: 0;
+}
 
 /* Footer */
 footer {
@@ -137,6 +142,35 @@ footer {
     transform: translateY(-50%);
     height: auto;
     width: 120px;
+}
+
+#start-button-pressed {
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    height: auto;
+    width: 120px;
+    display:none;
+    z-index: 3;
+}
+
+#start-menu {
+    position: fixed;
+    height: 30%;
+    width: 50%;
+    bottom:40px;
+    display: none;
+    background: #fff;
+    z-index: 3;
+    border-width: 4px;
+    border-color: #d9d9d9;
+    border-style:solid;
+    color:#333;
+}
+
+#start-menu h3 {
+    padding-left: 10px;    
 }
 
 #clock{
@@ -171,6 +205,11 @@ footer {
     #homepage {
       grid-template-columns: repeat(7, 1fr);
       grid-template-rows: repeat(7, 1fr);
+    }
+
+    #start-menu {
+        height: 50%;
+        width: 20%;
     }
 
     .icon {

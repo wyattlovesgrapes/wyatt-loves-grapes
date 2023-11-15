@@ -35,6 +35,7 @@ export function closeContentWindow(){
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('blog close button added');
     // Attach click event for blog window x button
     const closeBlogPostButton = document.getElementById('close-blog-post');
     closeBlogPostButton.addEventListener('click', function () {
