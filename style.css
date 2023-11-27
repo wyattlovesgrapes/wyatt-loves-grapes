@@ -4,9 +4,7 @@
     src: url('/assets/fonts/Minecraft.ttf') format('truetype');
 }
 
-*:focus {
-    outline: none;
-  }
+
 
 /* Header */
 header {
@@ -79,6 +77,7 @@ body {
     height: 64px;
     width: auto;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .icon {
