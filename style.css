@@ -4,6 +4,10 @@
     src: url('/assets/fonts/Minecraft.ttf') format('truetype');
 }
 
+*:focus {
+    outline: none;
+  }
+
 /* Header */
 header {
     background: #fff;
