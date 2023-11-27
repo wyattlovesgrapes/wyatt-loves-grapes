@@ -1,4 +1,6 @@
 import { loadAndDisplayContent } from "./blog.js";
+import { partyTime } from "./party-time.js";
+import { stopTheParty } from "./party-time.js";
 
 
 function createIcon(iconInfo) {
@@ -21,7 +23,8 @@ function createEmptyIcon() {
 
 export function renderIcons(iconArray) {
     var homepage = document.getElementById('homepage');
-        homepage.innerHTML = ''; // Clear existing icons before rendering
+    homepage.innerHTML = ''; // Clear existing icons before rendering
+    
 
 
     iconArray.forEach(function (iconInfo) {
@@ -38,6 +41,7 @@ export function renderIcons(iconArray) {
 
 function addClickEvents() {
     // Attach click event listeners to all icon images
+    window.addEventListener('click', stopTheParty);
     const icons = document.querySelectorAll('.icon img');
 
     icons.forEach(img => {
@@ -50,22 +54,20 @@ function addClickEvents() {
                 const iconId = icon.id;
                 console.log('Clicked on icon with ID:', iconId);
 
-                // Load and display content based on the icon id
-                loadAndDisplayContent(`/blog-posts/${iconId}.html`);
+                switch (iconId) {
+                    case 'party-time':
+                        console.log('party time case running');
+                        partyTime();
+                        break;
+
+                    default:
+                        loadAndDisplayContent(`/blog-posts/${iconId}.html`);
+                        break;
+                }
             }
         });
     });
 }
-    
-/*
-function removeIcon(icon) {
-    var homepage = document.getElementById('homepage');
 
-     // Replace 'childIdToRemove' with the actual id of the child you want to remove
-    var childToRemove = document.getElementById(icon);
-
-    if (childToRemove) {
-        homepage.removeChild(childToRemove);
-    }
-}
-*/
+//const homepage = document.getElementById('homepage');
+  //homepage.addEventListener('click', stopTheParty, {once: true});

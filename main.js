@@ -4,6 +4,7 @@ import { updateClock } from "./components/clock.js";
 import { loadingBar } from "./components/loading-bar.js";
 import { renderIcons } from "./components/homepage.js";
 
+
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM content loaded');
 
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             renderIcons(desktopIconArray);
         }
     });
+
 
 });
 

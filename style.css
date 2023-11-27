@@ -46,6 +46,22 @@ body {
     transition: width 1s ease-in-out;
 }
 
+/* Party Time */
+#party-container {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 0.5s ease-in-out;
+    z-index: 4;
+}
+  
+#party-gif {
+    max-width: 100%;
+    height: auto;
+}
+
+
 /* Homepage */
 
 #homepage {
