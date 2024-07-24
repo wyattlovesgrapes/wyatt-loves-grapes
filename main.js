@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM content loaded');
 
     /* Call Functions */
-    loadingBar(); //Display loading bar
+    //loadingBar(); //Display loading bar
     updateClock(); //Start clock cycle
 
     // Default icon render
