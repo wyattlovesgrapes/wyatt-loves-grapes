@@ -1,5 +1,5 @@
 export const desktopIconArray = [
-    { name: 'null', position: 1, empty: true },
+    { name: 'gabber', position: 1, empty: false },
     { name: 'bio', position: 2, empty: false },
     { name: 'videos', position: 3, empty: false },
     { name: 'null', position: 4, empty: true },
@@ -36,7 +36,7 @@ export const mobileIconArray = [
     { name: 'null', position: 4, empty: true },
     { name: 'null', position: 5, empty: true },
     { name: 'null', position: 6, empty: true },
-    { name: 'null', position: 7, empty: true },
+    { name: 'gabber', position: 7, empty: false },
     { name: 'null', position: 8, empty: true },
     { name: 'videos', position: 9, empty: false },
     { name: 'micro-machines', position: 10, empty: false },
