@@ -14,6 +14,8 @@ export function stopTheParty(event) {
   // Check if the clicked element or any of its ancestors is the partyDiv
   if (!event.target.closest('#party-time')) {
     partyContainer.style.top = '-100%';
-    console.log('the party has stopped');
+    
+    // Update to run console message only if party is active
+    // console.log('the party has stopped');
   }
 }

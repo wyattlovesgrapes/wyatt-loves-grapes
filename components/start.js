@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('start menu loaded');
+    // console.log('start menu loaded');
     const startButton = document.getElementById('start-button');
     const startButtonPressed = document.getElementById('start-button-pressed');
     const startMenu = document.getElementById('start-menu');

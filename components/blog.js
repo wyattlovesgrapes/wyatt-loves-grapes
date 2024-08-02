@@ -1,72 +1,100 @@
 export function loadAndDisplayContent(contentUrl) {
     fetch(contentUrl)
-    .then(response => response.text())
-    .then(content => {
-        // Store the retrieved content in a temporary div
-        //console.log("Fetched content:", content);
-        const postContent = document.createElement('div');
-        postContent.innerHTML = content;
+        .then(response => response.text())
+        .then(content => {
 
-        // Select blog window post and title html elements
-        const blogWindowPost = document.getElementById('blog-window-post');
-        const blogWindowTitle = document.getElementById('blog-window-title');
+            // Create a temporary div to store the retrieved html content
+            const pageContent = document.createElement('div');
+            pageContent.innerHTML = content;
+            console.log("Post Content: " + pageContent.innerHTML);
 
-        // Select post content post title and post html content elements
-        const postTitleElement = postContent.querySelector('#post-title');
-        const postContentElement = postContent.querySelector('#post');
+            // Select blog window post and title HTML elements from index.html
+            const blogWindowPost = document.getElementById('blog-window-post');
+            const blogWindowTitle = document.getElementById('blog-window-title');
 
-        if (postTitleElement && postContentElement) {
-            // Assign the post title and content to the blog window html elements
-            blogWindowTitle.innerHTML = postTitleElement.innerHTML;
-            blogWindowPost.innerHTML = postContentElement.innerHTML;
+            // Select post title and post content html elements from pageContent
+            const contentTitleElement = pageContent.querySelector('.post-title');
+            console.log("Post Title Element: " + contentTitleElement.innerHTML);
+            const contentPostElement = pageContent.querySelector('.post');
+            console.log("Contnet Post Element: " + contentPostElement.innerHTML);
 
-            // Display the blog window
-            document.getElementById('blog-window-border').style.display = 'block';
+            createBorder('blog-window-border');
 
-            // Display the page dimmer behind the blog window
-            document.getElementById('dimmer').style.display ='block';
+            // If these exist
+            if (contentTitleElement && contentPostElement) {
+                // Assign the post title and content to the blog window HTML elements
+                blogWindowTitle.innerHTML = contentTitleElement.innerHTML;
+                blogWindowPost.innerHTML = contentPostElement.innerHTML;
 
-            // Ensure the new content is in the DOM before querying
-            document.body.appendChild(postContent);
+               
+                // Display the blog window and page dimmer
+                document.getElementById('blog-window-border').style.display = 'block';
+                document.getElementById('dimmer').style.display = 'block';
+            
+                // Ensure the new content is in the DOM before querying
+                //document.body.appendChild(pageContent);
+            
+                // Select the content blocks
+                const contentBlocks = pageContent.querySelectorAll('.content-block');
+            
+                console.log("Blocks Found:", contentBlocks.length);
+                console.log(contentBlocks);
+            
+                contentBlocks.forEach((block, index) => {
+                    console.log(index + " ID: " + block.id);
+                    console.log("Block:", block);
+                    createBorder(block.id);
+                    // Create and append a corner image to each block
+                    //const img = document.createElement('img');
+                    //img.className = 't-left-corner';
+                   // img.src = '/assets/graphics/t-left-corner.png';
+                   // blogWindowPost.appendChild(img);
+            
+                    //console.log("Block after appending image:", block.innerHTML);
+                });
 
-            // Select the content blocks
-            const contentBlocks = postContent.querySelectorAll('.content-block');
-
-            console.log("Blocks Found:", contentBlocks.length);
-
-            contentBlocks.forEach((block, index) => {
-                console.log(index + " ID: " + block.id);
-                // Create a corner div
-                const img1 = document.createElement('img');
-                img1.id = 'cornerA';
-                //console.log(img1.id);
-                img1.src = '/assets/graphics/t-left-corner.png';
-                block.appendChild(img1);
-                console.log(block.innerHTML);
-                // Append it to the img
-            });
-        } else {
-            console.error("Post title or content element not found.");
-        }
-    })
-    .catch(error => {
-        console.error("Error fetching content:", error);
-    });
+            } else {
+                console.error("Post title or content element not found.");
+            }
+            
+        })
+        .catch(error => {
+            console.error("Error fetching content:", error);
+        });
 }
 
-export function closeContentWindow(){
+export function closeContentWindow() {
     console.log("closed content window");
     document.getElementById('blog-window-border').style.display = 'none';
-    document.getElementById('dimmer').style.display ='none';
-
+    document.getElementById('dimmer').style.display = 'none';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('blog close button added');
-    // Attach click event for blog window x button
+    // console.log('blog close button added');
+
+    // Attach click event for blog window close button
     const closeBlogPostButton = document.getElementById('close-blog-post');
     closeBlogPostButton.addEventListener('click', function () {
         closeContentWindow();
-
     });
 });
+
+function createBorder(elementID) {
+
+    console.log('creating border');
+     // Creates the master window border
+     const border = document.getElementById(elementID)
+     for (var i=0; i <= 3; i++){
+         const img = document.createElement('img');
+         img.className = 'corner-' + i;
+         img.src = '/assets/graphics/corner-' + i + '.png';
+         border.appendChild(img);  
+     }
+
+     for (var i=0; i <= 3; i++){
+        const img = document.createElement('img');
+        img.className = 'line-' + i;
+        img.src = '/assets/graphics/line.jpg';
+        border.appendChild(img);  
+    }
+}

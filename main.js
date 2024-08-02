@@ -6,7 +6,7 @@ import { renderIcons } from "./components/homepage.js";
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM content loaded');
+    // console.log('DOM content loaded');
 
     /* Call Functions */
     //loadingBar(); //Display loading bar

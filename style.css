@@ -143,32 +143,46 @@ body {
 }
 
 
-#t-left-corner {
+.content-block{
+    position: relative;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.post {
+    margin:10px;
+}
+
+.corner-0 {
     position: absolute;
     top: -4px;
     left: -4px;
     
 }
 
-#b-left-corner {
+.corner-2 {
     position: absolute;
     bottom: -4px;
     left: -4px;
 }
 
-#t-right-corner {
+.corner-1 {
     position: absolute;
     top: -4px;
     right: -4px;
 }
 
-#b-right-corner {
+.corner-3 {
     position: absolute;
     bottom: -4px;
     right: -4px;
 }
 
-#l-b-line {
+.line-3 {
     position: absolute;
     left: -4px;
     width: 4px;
@@ -178,7 +192,7 @@ body {
     object-fit: cover;
 }
 
-#r-b-line {
+.line-1 {
     position: absolute;
     right: -4px;
     width: 4px;
@@ -188,7 +202,7 @@ body {
     object-fit: cover;
 }
 
-#t-b-line {
+.line-0 {
     position: absolute;
     top: -4px;
     height: 4px;
@@ -198,7 +212,7 @@ body {
     object-fit: cover;
 }
 
-#b-b-line {
+.line-2 {
     position: absolute;
     bottom: -4px;
     height: 4px;
@@ -207,6 +221,9 @@ body {
     right: 3px;
     object-fit: cover;
 }
+
+
+
 
 
 
@@ -235,7 +252,7 @@ body {
     width: 30px;
 }
 
-#post h3 {
+.post-title h3 {
     padding: 0;
     margin: 0;
 }
@@ -309,15 +326,6 @@ footer {
     padding: 20px 10px; 
 }
 
-#cornerA {
-    position: absolute;
-    top: 300px;
-    left: 0x;
-    z-index: 5;
-}
-.content-block {
-    border: 4px solid black;
-}
 
 /* Mobile */
 @media (max-width: 768px) {
