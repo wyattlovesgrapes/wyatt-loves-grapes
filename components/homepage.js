@@ -25,8 +25,6 @@ export function renderIcons(iconArray) {
     var homepage = document.getElementById('homepage');
     homepage.innerHTML = ''; // Clear existing icons before rendering
     
-
-
     iconArray.forEach(function (iconInfo) {
         if (iconInfo.empty === false) {
             var icon = createIcon(iconInfo);
@@ -56,7 +54,7 @@ function addClickEvents() {
 
                 switch (iconId) {
                     case 'party-time':
-                        console.log('party time case running');
+                        console.log('the party has been started');
                         partyTime();
                         break;
 
@@ -70,4 +68,4 @@ function addClickEvents() {
 }
 
 //const homepage = document.getElementById('homepage');
-  //homepage.addEventListener('click', stopTheParty, {once: true});
+//homepage.addEventListener('click', stopTheParty, {once: true});

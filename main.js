@@ -1,8 +1,8 @@
 // main.js
 import { desktopIconArray, mobileIconArray } from "./components/icon-config.js";
 import { updateClock } from "./components/clock.js";
-// import { loadingBar } from "./components/loading-bar.js";
 import { renderIcons } from "./components/homepage.js";
+// import { loadingBar } from "./components/loading-bar.js";
 
 
 document.addEventListener('DOMContentLoaded', function () {
