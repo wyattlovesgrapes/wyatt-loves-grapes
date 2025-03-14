@@ -30,13 +30,13 @@ export const desktopIconArray = [
 ];
 
 export const mobileIconArray = [
-    { name: 'bio', position: 1, empty: true },
+    { name: 'gabber', position: 1, empty: false },
     { name: 'null', position: 2, empty: true },
     { name: 'null', position: 3, empty: true },
     { name: 'null', position: 4, empty: true },
     { name: 'null', position: 5, empty: true },
     { name: 'null', position: 6, empty: true },
-    { name: 'gabber', position: 7, empty: false },
+    { name: 'bio', position: 7, empty: true },
     { name: 'null', position: 8, empty: true },
     { name: 'videos', position: 9, empty: false },
     { name: 'micro-machines', position: 10, empty: false },
