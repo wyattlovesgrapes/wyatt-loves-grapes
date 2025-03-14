@@ -1,10 +1,10 @@
 export const desktopIconArray = [
     { name: 'gabber', position: 1, empty: false },
-    { name: 'bio', position: 2, empty: false },
+    { name: 'bio', position: 2, empty: true },
     { name: 'videos', position: 3, empty: false },
     { name: 'null', position: 4, empty: true },
     { name: 'null', position: 5, empty: true },
-    { name: 'pics', position: 6, empty: false },
+    { name: 'pics', position: 6, empty: true },
     { name: 'null', position: 7, empty: true },
     { name: 'micro-machines', position: 8, empty: false },
     { name: 'Icon9', position: 9, empty: true },
@@ -30,7 +30,7 @@ export const desktopIconArray = [
 ];
 
 export const mobileIconArray = [
-    { name: 'bio', position: 1, empty: false },
+    { name: 'bio', position: 1, empty: true },
     { name: 'null', position: 2, empty: true },
     { name: 'null', position: 3, empty: true },
     { name: 'null', position: 4, empty: true },
@@ -41,7 +41,7 @@ export const mobileIconArray = [
     { name: 'videos', position: 9, empty: false },
     { name: 'micro-machines', position: 10, empty: false },
     { name: 'Icon11', position: 11, empty: true },
-    { name: 'pics', position: 12, empty: false },
+    { name: 'pics', position: 12, empty: true },
     { name: 'party-time', position: 13, empty: false },
     { name: 'smoking-section', position: 14, empty: true },
     { name: 'recycle', position: 15, empty: false },
