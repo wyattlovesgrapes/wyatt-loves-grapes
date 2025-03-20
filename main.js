@@ -1,33 +1,28 @@
-// main.js
 import { desktopIconArray, mobileIconArray } from "./components/icon-config.js";
-import { updateClock } from "./components/clock.js";
-// import { loadingBar } from "./components/loading-bar.js";
-import { renderIcons } from "./components/homepage.js";
+import { updateClock } from "./components/core/clock.js";
+import { renderHomepage } from "./components/core/homepage.js";
 
-
+/*--event-loop------------------------*/
 document.addEventListener('DOMContentLoaded', function () {
-    // console.log('DOM content loaded');
 
-    /* Call Functions */
-    //loadingBar(); //Display loading bar
-    updateClock(); //Start clock cycle
+    /*--clock------------------------*/
+    updateClock();
 
-    // Default icon render
+    /*--render-homepage------------------------*/
     if (window.innerWidth <= 768) {
-        renderIcons(mobileIconArray);
+        renderHomepage(mobileIconArray);
     } else {
-        renderIcons(desktopIconArray);
+        renderHomepage(desktopIconArray);
     }
 
-    // Attach event listener for window resize
+    /*--resize------------------------*/
     window.addEventListener('resize', function () {
         if (window.innerWidth <= 768) {
-            renderIcons(mobileIconArray);
+            renderHomepage(mobileIconArray);
         } else {
-            renderIcons(desktopIconArray);
+            renderHomepage(desktopIconArray);
         }
     });
-
 
 });
 

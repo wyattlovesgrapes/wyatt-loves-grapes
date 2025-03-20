@@ -1,12 +1,6 @@
-/* Global Styles */
-@font-face {
-    font-family: 'Minecraft';
-    src: url('/assets/fonts/Minecraft.ttf') format('truetype');
-}
+/*--global-styles------------------------*/
 
-
-
-/* Header */
+/*--header------------------------*/
 header {
     background: #fff;
     color: #333;
@@ -24,8 +18,7 @@ header p {
     margin: 0;  
 }
 
-
-/* Body */
+/*--body------------------------*/
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -33,41 +26,39 @@ body {
     font-family: 'Minecraft';
 }
 
-/* Loading Bar */
-#loading-bar {
+.centered-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 20px 10px; 
+}
+
+
+
+/*--footer------------------------*/
+footer {
+    background: #fff;
+    color: #333;
+    padding: 0px;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    height:20px;
-    border: 1px solid #ccc;
+    height: 40px;
     overflow: hidden;
 }
 
-#progress-bar {
-    height: 100%;
-    width: 0;
-    background-color:#333;
-    transition: width 1s ease-in-out;
+/*--fonts------------------------*/
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/assets/fonts/Minecraft.ttf') format('truetype');
 }
 
-/* Party Time */
-#party-container {
-    position: absolute;
-    top: -100%;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: top 0.5s ease-in-out;
-    z-index: 4;
-}
-  
-#party-gif {
-    max-width: 100%;
-    height: auto;
-}
+/*--components------------------------*/
 
-
-/* Homepage */
-
+/*--homepage------------------------*/
 #homepage {
-    background: url('/assets/bg-01.png') center/cover no-repeat fixed;
+    background: url('/assets/graphics/bg-01.png') center/cover no-repeat fixed;
     height: 100vh;
     display: grid;
     overflow: hidden;
@@ -114,9 +105,8 @@ body {
     display: none;
 }
 
-/* Blog Posts */
-
-#blog-window-border {
+/*--explorer------------------------*/
+#explorer {
     display: none;
     overflow: visible;
     background-color: white;
@@ -129,117 +119,41 @@ body {
     height: 70%;
 }
 
-#blog-window {
-    z-index: 3;
-    width: 100%;
-    height: 98%;
-    overflow-y: scroll;
-    scrollbar-width: none;
-
-
-    /* border: 4px solid black; */
-    
-
-}
-
-
-.content-block{
-    position: relative;
-    margin: 10px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-.post {
-    margin:10px;
-}
-
-.corner-0 {
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    
-}
-
-.corner-2 {
-    position: absolute;
-    bottom: -4px;
-    left: -4px;
-}
-
-.corner-1 {
-    position: absolute;
-    top: -4px;
-    right: -4px;
-}
-
-.corner-3 {
-    position: absolute;
-    bottom: -4px;
-    right: -4px;
-}
-
-.line-3 {
-    position: absolute;
-    left: -4px;
-    width: 4px;
-    height: calc(100% - 6px);
-    top: 3px;
-    bottom: 3px;
-    object-fit: cover;
-}
-
-.line-1 {
-    position: absolute;
-    right: -4px;
-    width: 4px;
-    height: calc(100% - 6px);
-    top: 3px;
-    bottom: 3px;
-    object-fit: cover;
-}
-
-.line-0 {
-    position: absolute;
-    top: -4px;
-    height: 4px;
-    width: calc(100% - 6px);
-    left: 3px;
-    right: 3px;
-    object-fit: cover;
-}
-
-.line-2 {
-    position: absolute;
-    bottom: -4px;
-    height: 4px;
-    width: calc(100% - 6px);
-    left: 3px;
-    right: 3px;
-    object-fit: cover;
-}
-
-
-
-
-
-
-
-#window-header {
+#explorer-header {
     position: relative;
     border-bottom: 4px solid black;
     height: 50px;
 }
 
-#window-header h3 {
+#explorer-title h3 {
     margin: 0;
-    font-size: 24px;    padding-top: 15px;
+    font-size: 24px;    
+    padding-top: 15px;
     padding-left: 10px;
 }
-  
+
+#explorer-content{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#explorer-content img {
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto; 
+    display: block; 
+}
+
+#explorer-content p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 0.5;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 #close-blog-post {
     position: absolute;
     padding-bottom: px;
@@ -252,23 +166,18 @@ body {
     width: 30px;
 }
 
-.post-title h3 {
-    padding: 0;
-    margin: 0;
+/*--blocks------------------------*/
+.content-block{
+    position: relative;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
-/* Footer */
-footer {
-    background: #fff;
-    color: #333;
-    padding: 0px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    overflow: hidden;
-}
-
+/*--start-------------------------*/
 #start-button {
     position: absolute;
     top: 50%;
@@ -307,6 +216,7 @@ footer {
     padding-left: 10px;    
 }
 
+/*--clock-----------------------*/
 #clock{
     z-index: 3;
     position: absolute;
@@ -318,16 +228,39 @@ footer {
     padding-right: 8px;
 }
 
-.centered-block {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding: 20px 10px; 
+/*--loading-bar------------------------*/
+#loading-bar {
+    width: 100%;
+    height:20px;
+    border: 1px solid #ccc;
+    overflow: hidden;
 }
 
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color:#333;
+    transition: width 1s ease-in-out;
+}
 
-/* Mobile */
+/*--party-time------------------------*/
+#party-container {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 0.5s ease-in-out;
+    z-index: 4;
+}
+  
+#party-gif {
+    max-width: 100%;
+    height: auto;
+}
+
+/*--responsive-design-----------------------*/
+
+/*--mobile------------------------*/
 @media (max-width: 768px) {
     #homepage {
         grid-template-columns: repeat(3, 1fr);
@@ -335,7 +268,7 @@ footer {
     }
 }
   
-/* Desktop */
+/*--desktop------------------------*/
 @media (min-width: 767px) {
     #homepage {
       grid-template-columns: repeat(7, 1fr);
@@ -350,4 +283,72 @@ footer {
     .icon {
         padding-top: 70px;
     }
+}
+
+/*--utils-----------------------*/
+
+/*--pixel-border------------------------*/
+.corner-0 {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    
+}
+
+.corner-1 {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+}
+
+.corner-2 {
+    position: absolute;
+    bottom: -4px;
+    left: -4px;
+}
+
+.corner-3 {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+}
+
+.line-0 {
+    position: absolute;
+    top: -4px;
+    height: 4px;
+    width: calc(100% - 6px);
+    left: 3px;
+    right: 3px;
+    object-fit: cover;
+}
+
+.line-1 {
+    position: absolute;
+    right: -4px;
+    width: 4px;
+    height: calc(100% - 6px);
+    top: 3px;
+    bottom: 3px;
+    object-fit: cover;
+}
+
+.line-2 {
+    position: absolute;
+    bottom: -4px;
+    height: 4px;
+    width: calc(100% - 6px);
+    left: 3px;
+    right: 3px;
+    object-fit: cover;
+}
+
+.line-3 {
+    position: absolute;
+    left: -4px;
+    width: 4px;
+    height: calc(100% - 6px);
+    top: 3px;
+    bottom: 3px;
+    object-fit: cover;
 }
