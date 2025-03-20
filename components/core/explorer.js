@@ -3,38 +3,35 @@ export function loadAndDisplayContent(contentUrl) {
         .then(response => response.text())
         .then(content => {
 
-            // Create a temporary div to store the retrieved html content
+            // create a temporary div to store the fetched html content
             const pageContent = document.createElement('div');
             pageContent.innerHTML = content;
-            console.log("Post Content: " + pageContent.innerHTML);
+            console.log("Block Content: " + pageContent.innerHTML);
 
-            // Select blog window post and title HTML elements from index.html
-            const blogWindowPost = document.getElementById('blog-window-post');
-            const blogWindowTitle = document.getElementById('blog-window-title');
+            // select explorer title and content
+            const explorerTitle = document.getElementById('explorer-title');
+            const explorerContent = document.getElementById('explorer-content');
 
-            // Select post title and post content html elements from pageContent
-            const contentTitleElement = pageContent.querySelector('.post-title');
-            console.log("Post Title Element: " + contentTitleElement.innerHTML);
-            const contentPostElement = pageContent.querySelector('.post');
-            console.log("Contnet Post Element: " + contentPostElement.innerHTML);
+            // select post title and content
+            const widgetTitle = pageContent.querySelector('.widget-title');
+            console.log("Widget Title: " + widgetTitle.innerHTML);
+            const widgetContent = pageContent.querySelector('.widget-content');
+            console.log("Widget Content: " + widgetContent.innerHTML);
 
-            createBorder('blog-window-border');
+            createBorder('explorer');
 
             // If these exist
-            if (contentTitleElement && contentPostElement) {
+            if (widgetTitle && widgetContent) {
                 // Assign the post title and content to the blog window HTML elements
-                blogWindowTitle.innerHTML = contentTitleElement.innerHTML;
-                blogWindowPost.innerHTML = contentPostElement.innerHTML;
+                explorerTitle.innerHTML = widgetTitle.innerHTML;
+                explorerContent.innerHTML = widgetContent.innerHTML;
 
                
-                // Display the blog window and page dimmer
-                document.getElementById('blog-window-border').style.display = 'block';
+                // display the explorer and page dimmer
+                document.getElementById('explorer').style.display = 'block';
                 document.getElementById('dimmer').style.display = 'block';
             
-                // Ensure the new content is in the DOM before querying
-                //document.body.appendChild(pageContent);
-            
-                // Select the content blocks
+                // display the content blocks
                 const contentBlocks = pageContent.querySelectorAll('.content-block');
             
                 console.log("Blocks Found:", contentBlocks.length);
@@ -44,13 +41,6 @@ export function loadAndDisplayContent(contentUrl) {
                     console.log(index + " ID: " + block.id);
                     console.log("Block:", block);
                     createBorder(block.id);
-                    // Create and append a corner image to each block
-                    //const img = document.createElement('img');
-                    //img.className = 't-left-corner';
-                   // img.src = '/assets/graphics/t-left-corner.png';
-                   // blogWindowPost.appendChild(img);
-            
-                    //console.log("Block after appending image:", block.innerHTML);
                 });
 
             } else {
@@ -65,8 +55,9 @@ export function loadAndDisplayContent(contentUrl) {
 
 export function closeContentWindow() {
     console.log("closed content window");
-    document.getElementById('blog-window-border').style.display = 'none';
+    document.getElementById('explorer').style.display = 'none';
     document.getElementById('dimmer').style.display = 'none';
+    cleanupBorder('explorer');
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -96,5 +87,16 @@ function createBorder(elementID) {
         img.className = 'line-' + i;
         img.src = '/assets/graphics/line.jpg';
         border.appendChild(img);  
+    }
+}
+
+function cleanupBorder(elementID) {
+    console.log('cleaning up border');
+    const border = document.getElementById(elementID);
+    if (border.children) {
+        while (border.children.length > 2) {
+            // remove all children except the first two (which are the title and content)
+            border.removeChild(border.lastChild);
+        }
     }
 }

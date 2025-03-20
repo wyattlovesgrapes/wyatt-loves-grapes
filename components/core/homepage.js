@@ -21,24 +21,6 @@ function createEmptyIcon() {
     return emptyIcon;
 }
 
-export function renderIcons(iconArray) {
-    var homepage = document.getElementById('homepage');
-    homepage.innerHTML = '';
-    
-
-
-    iconArray.forEach(function (iconInfo) {
-        if (iconInfo.empty === false) {
-            var icon = createIcon(iconInfo);
-        } else {
-            var icon = createEmptyIcon();
-        }
-        homepage.appendChild(icon);
-    });
-
-    addClickEvents();
-}
-
 /*--click-events------------------------*/
 function addClickEvents() {
     // Attach click event listeners to all icon images
@@ -68,4 +50,21 @@ function addClickEvents() {
             }
         });
     });
+}
+
+/*--render-----------------------*/
+export function renderHomepage(iconArray) {
+    var homepage = document.getElementById('homepage');
+    homepage.innerHTML = '';
+    
+    iconArray.forEach(function (iconInfo) {
+        if (iconInfo.empty === false) {
+            var icon = createIcon(iconInfo);
+        } else {
+            var icon = createEmptyIcon();
+        }
+        homepage.appendChild(icon);
+    });
+
+    addClickEvents();
 }

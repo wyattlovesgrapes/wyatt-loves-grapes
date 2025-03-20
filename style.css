@@ -34,17 +34,7 @@ body {
     padding: 20px 10px; 
 }
 
-#window-header {
-    position: relative;
-    border-bottom: 4px solid black;
-    height: 50px;
-}
 
-#window-header h3 {
-    margin: 0;
-    font-size: 24px;    padding-top: 15px;
-    padding-left: 10px;
-}
 
 /*--footer------------------------*/
 footer {
@@ -116,7 +106,7 @@ footer {
 }
 
 /*--explorer------------------------*/
-#blog-window-border {
+#explorer {
     display: none;
     overflow: visible;
     background-color: white;
@@ -129,13 +119,41 @@ footer {
     height: 70%;
 }
 
-#blog-window {
-    z-index: 3;
-    width: 100%;
-    height: 98%;
+#explorer-header {
+    position: relative;
+    border-bottom: 4px solid black;
+    height: 50px;
+}
+
+#explorer-title h3 {
+    margin: 0;
+    font-size: 24px;    
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+#explorer-content{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: calc(100% - 50px);
     overflow-y: scroll;
     scrollbar-width: none;
 }
+
+#explorer-content img {
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto; 
+    display: block; 
+}
+
+#explorer-content p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 0.5;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 #close-blog-post {
     position: absolute;
     padding-bottom: px;
@@ -157,15 +175,6 @@ footer {
     flex-direction: column;
     align-items: center;
 
-}
-
-.post {
-    margin:10px;
-}
-
-.post-title h3 {
-    padding: 0;
-    margin: 0;
 }
 
 /*--start-------------------------*/
