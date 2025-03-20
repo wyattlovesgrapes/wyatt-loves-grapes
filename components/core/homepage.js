@@ -1,8 +1,8 @@
-import { loadAndDisplayContent } from "./blog.js";
-import { partyTime } from "./party-time.js";
-import { stopTheParty } from "./party-time.js";
+import { loadAndDisplayContent } from "./explorer.js";
+import { partyTime } from "../widgets/party-time.js";
+import { stopTheParty } from "../widgets/party-time.js";
 
-
+/*--icons------------------------*/
 function createIcon(iconInfo) {
     var icon = document.createElement('div');
     icon.id = iconInfo.name;
@@ -23,7 +23,7 @@ function createEmptyIcon() {
 
 export function renderIcons(iconArray) {
     var homepage = document.getElementById('homepage');
-    homepage.innerHTML = ''; // Clear existing icons before rendering
+    homepage.innerHTML = '';
     
 
 
@@ -39,6 +39,7 @@ export function renderIcons(iconArray) {
     addClickEvents();
 }
 
+/*--click-events------------------------*/
 function addClickEvents() {
     // Attach click event listeners to all icon images
     window.addEventListener('click', stopTheParty);
@@ -61,13 +62,10 @@ function addClickEvents() {
                         break;
 
                     default:
-                        loadAndDisplayContent(`/blog-posts/${iconId}.html`);
+                        loadAndDisplayContent(`/blocks/${iconId}.html`);
                         break;
                 }
             }
         });
     });
 }
-
-//const homepage = document.getElementById('homepage');
-  //homepage.addEventListener('click', stopTheParty, {once: true});

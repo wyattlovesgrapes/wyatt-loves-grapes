@@ -1,29 +1,65 @@
+<!-- grape.os - a retro style operating system for the web
+
+                                                     ^?^ :7^                              
+                                                    .Y&BJG@&5^                            
+                                                     ~GPJJ5#@@5^                          
+                                      .?5~.75!.75~  .Y@@#PJJ5#@@P~                        
+                                    :J#@#?^P#J^5@@P~  ^Y&@#PJJ5B@@P~                      
+                      !GG~~PG~^PG!^Y&@B7:...:...~5@@G!  :J&@#PJJ5B@@G!                    
+                   .7B@&5~~5P~~5&@@@B?^::^^:.^^:.:!5@@G!.7#@@@&PYP&@&Y.                   
+                  !#@&J^........^Y&@#J~~~~~~~~~~^^7P@@&PYB&G5G&GYB&@#!.!57                
+                  :Y5~^::^^::^^::^!PG7^~~~~~~~~~7G@@#PJJJY5YJY5YJJYG&BP#@@B7.             
+                  7##?~~~~~~~~~~~~J##Y!^^~~^^~~^!P#5JJJ5555555555YJY5555PB@@B?.           
+                  :YY~^~~~~~~~~~~^!P@@&5!^^!!^^~JB&PJJJY5YJY5YJY5555555555PB#?.           
+                  ?&&5!^^~^^^~~^^7P&@B#@&55#&Y?#@@#G55Y55YY55YJ5555YJY5555P##?.           
+              .!^ .5@@@P7^~?7^~?G@@B7::?B@@@P!~5#P5PB&@B5JJY5YJY5YJJY55555PBB!            
+            .?#@B~Y@#5G@@GB@&PB@@G!..:..:?B@&PP&@GP&@@#P5YY55YJJJJJ5555555P#&J            
+          ^Y&@#J^.:!^..7G@@@@@&P!..:^~~^^^~P@@@BJ~~5@@&BP555YJJJJJJY5JJY55PBG~            
+         .Y&BJ^..::..::..7G&@&Y~^^^~~~~~~~Y&@@P~^^J#@&BP55YJJJY55YY55YY555G#&J            
+          ~GJ~^^^~~^^~~^^^7B@@B?^~~~~~~~~~~?G&&G?~~5#P55YJJJY5555JJY5JJY55PBP^            
+         .J#P!^~~~~~~~~~~~5&@&Y~^^~~~~~~~~^^~P@@@BB&&GYJJY555GG55PP555Y555G&&J            
+          !GJ~^^~~~~~~~~^^7B@@@BJ~~!~^~!~^!Y#@&PG@@@GJJ5GPPG#@@&#@@B5555555BP:            
+         .J&@BJ~^^^^^^^~?G@@GJP@@#57JPY7?P&@&5!^^7P&@##@#JJ&&5Y&@#PJJY555G#@&?            
+     :JG7:?&@@@#J!YGY!JB@@G?~^^7P&@&&@@#@@#Y!^^~~^^7P&@@J  ::  7G55PGPPG#@@P!.            
+   ^Y&@#J!5BY75&@@@@@&@&P7^^~~~^^!5&@@@@BJ~^^~~~~~~^^!5&B~  .7PPPB&@&Y?#&5^               
+ :5@@B?~^^^~^^^!5&@@@&Y!^^~~~~~~~^^!5&@&5~^~~~~~~~~~~^7GJ.  !##??##J:  ::                 
+ .JG7~^^~~~~~~~^^!Y&@&Y~^~~~~~~~~~~~J#@&P!^~~~~~~~~~~~Y&G^   ..  ..                       
+ ^G#Y~~~~~~~~~~~^!P&@#J~~~~~~~~~~~~~Y&@&5!^^~~~^~~~^^~?GJ.                                
+ .?G7^~~~~~~~~~~^~Y&@&5!^^~~~^~~~^^!Y&@&@&5!~!!~~!!~JB@&P^                                
+ ~B&P7^^~~^^~~^^~JB@&B@@P7!7!!!!!7P&@B7:!G@@G?5#G?5#@&Y^                                  
+ .!G@@P?7777777Y#@&Y: !G@@P?B@P?G@@G!     !P7.!P?:!PJ:                                    
+    ~P@@YJ&@Y?#@#?:     ~J^.!J^.!Y~                                                       
+      ~!. ~!. ~7.                                                                         
+
+designed by grape-corp in san francisco, california
+copyright © 2024-2025
+-->
+
+<!--header------------------------>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>wyatt loves grapes</title>
+  <!--page-title------------------------>
+  <title>grapes.wtf</title>
 </head>
+
+<!--body------------------------>
 <body>
     <header>
+        <!--header-title------------------------>
         <p>grape.os v0.0.4</p>
-
-        <!-- Dims page behind blog post on icon click-->
+        <!--dimmer------------------------>
         <div id="dimmer"></div>
-
     </header>
 
-    <!-- Needs work --> 
-    <!-- <div id="loading-bar"> -->
-    <!-- <div id="progress-bar"></div> -->
-    </div>
 
-    <!-- Main div controlled by main.js and homepage.js -->
+    <!--homepage------------------------>
     <div id="homepage"></div>
 
-    <!-- Creates a traditional desktop start menu in the lower left hand corner of the screen using start.js -->
+    <!--start-menu------------------------>
     <div id="start-menu">
         <h3>a little poem:</h3>
         <h3>sorry, not sorry</h3>
@@ -33,10 +69,8 @@
         <h3>maybe someday</h3>
     </div>
 
-    <!-- Displays blog content from blog.js when a icon is clicked -->
+    <!--explorer------------------------>
     <div id="blog-window-border">
-        
-
         <div id="blog-window">
             <div id="window-header">
                 <div id="blog-window-title"></div>
@@ -46,20 +80,22 @@
         </div>
     </div>
 
-    <!-- Drops the disco ball and gets the party started -->
+    <!--party-time------------------------>
     <div id="party-container">
         <img id="party-gif" src="/assets/graphics/disco-ball.gif" alt="Party GIF">
     </div>
     
     <footer>
+        <!--start------------------------>
         <img src="assets/graphics/start-button.png" id="start-button">
         <img src="assets/graphics/start-button-pressed.png" id="start-button-pressed">
-
+        <!--clock------------------------>
         <p id="clock"></p>
     </footer>
 
+    <!--magic------------------------>
     <script src="main.js" type="module"></script>
-    <script src="/components/start.js" type="module"></script>
+    <script src="/components/core/start.js" type="module"></script>
 
 
 </body>
