@@ -46,6 +46,7 @@ function signUp(username, password) {
 function login(username, password){
     fetch("https://grapevine.grape.wtf/login", {
         method: "POST",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
     })
