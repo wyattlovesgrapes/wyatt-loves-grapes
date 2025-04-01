@@ -1,4 +1,4 @@
-import { desktopIconArray, mobileIconArray } from "./components/icon-config.js";
+import { desktopIconArray, mobileIconArray } from "./widgets/widget-icon-config.js";
 import { updateClock } from "./components/core/clock.js";
 import { renderHomepage } from "./components/core/homepage.js";
 

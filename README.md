@@ -1,5 +1,6 @@
 # grape-os
 
+## warning: below docs are very outdated
 index.html - root html file
 
     <header> - contains version number and global page items like <div ="dimmer">
