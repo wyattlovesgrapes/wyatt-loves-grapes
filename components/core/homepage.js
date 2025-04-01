@@ -44,14 +44,67 @@ function addClickEvents() {
                         break;
 
                     default:
-                        loadAndDisplayContent(`/widgets/core/${iconId}/${iconId}.html`,`/widgets/core/${iconId}/${iconId}.js`,);
-                        loadAndDisplayContent(`/widgets/tertiary/${iconId}/${iconId}.html`,`/widgets/tertiary/${iconId}/${iconId}.js`,);
+                        loadWidgetIfExists(iconId);
                         break;
                 }
             }
         });
     });
 }
+
+// helper function to check if files exist before loading them
+// need to update this to be more graceful, probably should store
+// widget types in the widget-icon-config to avoid a lot of whats below
+// currently throwing errors for aborted cases
+function loadWidgetIfExists(iconId) {
+
+    const htmlPathCore = `/widgets/core/${iconId}/${iconId}.html`;
+    const jsPathCore = `/widgets/core/${iconId}/${iconId}.js`;
+
+    const htmlPathTertiary = `/widgets/tertiary/${iconId}/${iconId}.html`;
+    const jsPathTertiary = `/widgets/tertiary/${iconId}/${iconId}.js`;
+
+    //console.log(htmlPathCore,jsPathCore,htmlPathTertiary,jsPathTertiary)
+    let htmlCore = false
+    let jsCore = false
+    let htmlTer = false
+    let jsTer = false
+
+  
+    //console.log(htmlCore,jsCore,htmlTer,jsTer)
+
+    Promise.all([
+        fileExists(htmlPathCore),
+        fileExists(jsPathCore),
+        fileExists(htmlPathTertiary),
+        fileExists(jsPathTertiary)
+    ]).then(([htmlCore, jsCore, htmlTer, jsTer]) => {
+        //console.log(htmlCore, jsCore, htmlTer, jsTer);
+
+        if (htmlCore && jsCore) {
+            loadAndDisplayContent(htmlPathCore, jsPathCore);
+        } else if (!htmlCore && jsCore) {
+            loadAndDisplayContent(null, jsPathCore);
+        } else if (htmlCore && !jsCore) {
+            loadAndDisplayContent(htmlPathCore, null);
+        } else if (htmlTer && jsTer) {
+            loadAndDisplayContent(htmlPathTertiary, jsPathTertiary);
+        } else if (!htmlTer && jsTer) {
+            loadAndDisplayContent(null, jsPathTertiary);
+        } else if (htmlTer && !jsTer) {
+            loadAndDisplayContent(htmlPathTertiary, null);
+        } else {
+            console.error(`Widget named ${iconId} is missing code files.`);
+        }
+    });
+}
+
+function fileExists(filePath) {
+    return fetch(filePath)
+        .then(response => response.ok)
+        .catch(() => false); 
+}
+
 
 /*--render-----------------------*/
 export function renderHomepage(iconArray) {
