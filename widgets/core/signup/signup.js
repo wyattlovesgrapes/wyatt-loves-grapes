@@ -58,6 +58,9 @@ function testProtectedRoute() {
     fetch("https://grapevine.grape.wtf/protected", {
         method: "GET",  // Use GET as it's a route you want to read data from
         credentials: 'include',  // Ensures cookies (like session token) are sent with the request
+        headers: {
+            "Content-Type": "application/json"
+        },
     })
     .then(response => {
         if (!response.ok) {
