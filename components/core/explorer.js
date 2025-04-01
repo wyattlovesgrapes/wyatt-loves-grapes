@@ -20,26 +20,24 @@ export function loadAndDisplayContent(contentUrl, scriptUrl) {
 
             createBorder('explorer');
 
-            // If these exist
+            // if these exist
             if (widgetTitle && widgetContent) {
-                // Assign the post title and content to the blog window HTML elements
+                // assign the post title and content to the explorer window HTML elements
                 explorerTitle.innerHTML = widgetTitle.innerHTML;
                 explorerContent.innerHTML = widgetContent.innerHTML;
 
-               
                 // display the explorer and page dimmer
                 document.getElementById('explorer').style.display = 'block';
                 document.getElementById('dimmer').style.display = 'block';
                 
+                // load the external script dynamically after the HTML is added
                 if (scriptUrl) {
-                    // Load the external script dynamically after the HTML is added
                     const script = document.createElement("script");
                     script.src = scriptUrl;
                     script.onload = () => console.log(`Loaded script: ${scriptUrl}`);
                     script.onerror = () => console.error(`Failed to load script: ${scriptUrl}`);
                     document.body.appendChild(script)
                 }
-
 
                 // display the content blocks
                 const contentBlocks = pageContent.querySelectorAll('.content-block');
@@ -91,13 +89,14 @@ function createBorder(elementID) {
          img.src = '/assets/graphics/corner-' + i + '.png';
          border.appendChild(img);  
      }
-
+     
      for (var i=0; i <= 3; i++){
         const img = document.createElement('img');
         img.className = 'line-' + i;
         img.src = '/assets/graphics/line.jpg';
         border.appendChild(img);  
     }
+        
 }
 
 function cleanupBorder(elementID) {

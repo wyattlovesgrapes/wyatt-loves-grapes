@@ -116,7 +116,8 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%; 
-    height: 70%;
+    max-height: fit-content;
+    max-width: fit-content;
 }
 
 #explorer-header {
@@ -138,14 +139,18 @@ footer {
     height: calc(100% - 50px);
     overflow-y: scroll;
     scrollbar-width: none;
+    
 }
 
+
+/*
 #explorer-content img {
     margin-top: 10px;
     max-width: 100%;
     height: auto; 
     display: block; 
 }
+*/
 
 #explorer-content p {
     margin: 10px 0;
@@ -167,13 +172,18 @@ footer {
 }
 
 /*--blocks------------------------*/
+
 .content-block{
     position: relative;
     margin: 10px;
-    padding: 5px;
+    margin-top:20px;
+    margin-bottom: 20px;
+
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: fit-content;
 
 }
 

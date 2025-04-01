@@ -1,4 +1,4 @@
-document.getElementById("submitButton").addEventListener("click", () => {
+document.getElementById("signupButton").addEventListener("click", () => {
     const username = document.getElementById("username").value;
     const password1 = document.getElementById("password1").value;
     const password2 = document.getElementById("password2").value;
