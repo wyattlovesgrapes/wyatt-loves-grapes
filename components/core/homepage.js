@@ -44,7 +44,7 @@ function addClickEvents() {
                         break;
 
                     default:
-                        loadAndDisplayContent(`/blocks/${iconId}.html`);
+                        loadAndDisplayContent(`/widgets/${iconId}.html`,`/components/core/${iconId}.js`,);
                         break;
                 }
             }

@@ -1,4 +1,4 @@
-export function loadAndDisplayContent(contentUrl) {
+export function loadAndDisplayContent(contentUrl, scriptUrl) {
     fetch(contentUrl)
         .then(response => response.text())
         .then(content => {
@@ -30,7 +30,17 @@ export function loadAndDisplayContent(contentUrl) {
                 // display the explorer and page dimmer
                 document.getElementById('explorer').style.display = 'block';
                 document.getElementById('dimmer').style.display = 'block';
-            
+                
+                if (scriptUrl) {
+                    // Load the external script dynamically after the HTML is added
+                    const script = document.createElement("script");
+                    script.src = scriptUrl;
+                    script.onload = () => console.log(`Loaded script: ${scriptUrl}`);
+                    script.onerror = () => console.error(`Failed to load script: ${scriptUrl}`);
+                    document.body.appendChild(script)
+                }
+
+
                 // display the content blocks
                 const contentBlocks = pageContent.querySelectorAll('.content-block');
             
@@ -99,4 +109,8 @@ function cleanupBorder(elementID) {
             border.removeChild(border.lastChild);
         }
     }
+}
+
+function createBlockListeners () {
+    // add event listeners to innerHtml
 }
