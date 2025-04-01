@@ -1,6 +1,6 @@
 import { loadAndDisplayContent } from "./explorer.js";
-import { partyTime } from "../widgets/party-time.js";
-import { stopTheParty } from "../widgets/party-time.js";
+import { partyTime } from "../../widgets/tertiary/party-time/party-time.js";
+import { stopTheParty } from "../../widgets/tertiary/party-time/party-time.js";
 
 /*--icons------------------------*/
 function createIcon(iconInfo) {
@@ -8,7 +8,7 @@ function createIcon(iconInfo) {
     icon.id = iconInfo.name;
     icon.className = 'icon';
     icon.innerHTML = `
-        <img src="/assets/icons/${iconInfo.name.toLowerCase()}.png" alt="${iconInfo.name}">
+        <img src="/assets/widget-icons/${iconInfo.name.toLowerCase()}.png" alt="${iconInfo.name}">
         <p class='icon-title'>${iconInfo.name}</p>
     `;
     return icon;
@@ -44,7 +44,8 @@ function addClickEvents() {
                         break;
 
                     default:
-                        loadAndDisplayContent(`/widgets/${iconId}.html`,`/components/core/${iconId}.js`,);
+                        loadAndDisplayContent(`/widgets/core/${iconId}/${iconId}.html`,`/widgets/core/${iconId}/${iconId}.js`,);
+                        loadAndDisplayContent(`/widgets/tertiary/${iconId}/${iconId}.html`,`/widgets/tertiary/${iconId}/${iconId}.js`,);
                         break;
                 }
             }
