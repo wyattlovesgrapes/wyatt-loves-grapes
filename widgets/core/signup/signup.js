@@ -63,16 +63,9 @@ function testProtectedRoute() {
             "Content-Type": "application/json"
         },
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Not authenticated or session expired.");
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log("Success:", data);
-    })
-    .catch(error => {
-        console.error("Error:", error);
-    });
+    .then(response => response.json())
+    .then(data => console.log("Success:", data))
+    .catch(error => console.error("Error:", error));
 }
+
+
